@@ -3,10 +3,10 @@ import { Button } from '~/components/Button'
 import { Home } from '~/components/Home'
 
 export const metadata: Metadata = {
-  title: 'oo',
-  description: "It's great to have you here."
+  title: 'Home',
+  description: 'home for pater'
 }
-export default function IndexPage() {
+export default function HomePage() {
   return (
     <div>
       <h1 className=" mb-10">Welcome to my app!</h1>
