@@ -1,5 +1,11 @@
 import path from 'node:path'
 import generateApi from 'swagger-typescript-api'
+import dotenv from 'dotenv'
+
+const defaultEnv = dotenv.config()
+const defaultLocalEnv = dotenv.config({ path: path.resolve(process.cwd(), '.env.local') })
+
+Object.assign(process.env, defaultEnv.parsed, defaultLocalEnv.parsed)
 
 export function generateSwaggerApi(options: { dir: string; url: string }) {
   const { dir, url } = options
@@ -27,5 +33,5 @@ export function generateSwaggerApi(options: { dir: string; url: string }) {
 
 generateSwaggerApi({
   dir: 'api/swagger',
-  url: 'http://xxx/v3/api-docs'
+  url: `${process.env.API_URL}/v3/api-docs`
 })
