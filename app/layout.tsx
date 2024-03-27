@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 
 import '~/assets/styles/tailwind.css'
+import '@yc-tech/react-component/dist/style.css'
 
 export const metadata: Metadata = {
   title: {
@@ -10,5 +11,12 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  return (
+    <html className="h-full">
+      <head />
+      <body className="h-full">
+        <main className="h-full">{children}</main>
+      </body>
+    </html>
+  )
 }

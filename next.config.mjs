@@ -27,6 +27,11 @@ const nextConfig = {
         source: '/',
         destination: '/home',
         permanent: true
+      },
+      {
+        source: '/api/:path*/',
+        destination: 'http://47.251.65.83:8088/:path*',
+        permanent: true
       }
     ]
   },
